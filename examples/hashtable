@@ -1,0 +1,18 @@
+define make-node: hashtable var then-node else-node
+  if eq?: then-node else-node
+     then-node
+     bind val new-node
+	     vector: var then-node else-node
+		     combine-hashes hash-symbol var
+				    combine-hashes if node? then-node
+						      node-hash then-node
+						      0
+						   if node? else-node
+						      node-hash else-node
+						      0
+       hashtable-access: hashtable new-node
+			 given put!
+			   put! #t
+			   new-node
+			 given args: existing value put!
+			   existing

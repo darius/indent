@@ -1,0 +1,21 @@
+This is a hacky prototype of an indentational syntax in Scheme.
+For example,
+
+  define factorial n
+    if =: n 0
+       1
+       * n 
+	 factorial -: n 1
+
+is like
+
+  (define (factorial n)
+    (if (= n 0)
+        1
+        (* n (factorial (- n 1)))))
+
+Copyright (c) 2002 Darius Bacon <darius@wry.me> 
+Distributed under the MIT license
+(http://opensource.org/licenses/mit-license.php)
+
+(Ancient unsupported code, reposted to github for preservation.)
